@@ -1,13 +1,18 @@
 import { useFormik } from "formik";
-import React from "react";
+import React, { useEffect } from "react";
+import { endpointGET } from "./application/api/axios";
 
 export function App() {
+  useEffect(() => {
+    endpointGET("endpoint");
+  }, []);
+
   const formik = useFormik({
     initialValues: {
       user: "",
       password: "",
     },
-    onSubmit: (values) => console.log(values),
+    onSubmit: async (values) => endpointGET("endpoint"),
   });
   return (
     <>
