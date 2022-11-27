@@ -5,7 +5,7 @@ import { HOME } from "./paths";
 export function RoutesPages() {
   return (
     <Routes>
-      <Route path={HOME} element={<HomeScreen />} />
+      <Route path={`${HOME}*`} element={<HomeScreen />} />
     </Routes>
   );
 }
