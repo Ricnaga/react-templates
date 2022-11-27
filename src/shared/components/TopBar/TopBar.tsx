@@ -1,9 +1,9 @@
-import { HOME } from "../../../application/routes/paths";
+import { HOME } from '../../../application/routes/paths';
 
 const links = [
   {
     href: HOME,
-    children: "Home",
+    children: 'Home',
   },
 ];
 
