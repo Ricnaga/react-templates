@@ -2,14 +2,19 @@ import { useFormik } from "formik";
 import React from "react";
 import { useAxios } from "../application/api/axios/useAxios";
 
+enum HomeData {
+  USER = "user",
+  PASSWORD = "password",
+}
+
 export function HomeScreen() {
   const {
     functions: { callEndpointGET },
   } = useAxios();
   const formik = useFormik({
     initialValues: {
-      user: "",
-      password: "",
+      [HomeData.USER]: "",
+      [HomeData.PASSWORD]: "",
     },
     onSubmit: async (values) =>
       callEndpointGET<{ message: string }>({ url: "/user" }).then((response) =>
@@ -22,13 +27,13 @@ export function HomeScreen() {
         <input
           type="text"
           placeholder="USER"
-          name="user"
+          name={HomeData.USER}
           onChange={formik.handleChange}
         />
         <input
           type="password"
           placeholder="PASSWORD"
-          name="password"
+          name={HomeData.PASSWORD}
           onChange={formik.handleChange}
         />
         <button type="submit">ENVIAR</button>
