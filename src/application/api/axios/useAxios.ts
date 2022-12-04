@@ -14,15 +14,17 @@ type AxiosParams<
 };
 
 export const useAxios = () => {
-  const callEndpointGET = async <T>({ url, config }: AxiosParams) =>
-    api.get<T>(url, config);
+  const callGETMethod = async <T>({
+    url,
+    config,
+  }: Omit<AxiosParams, 'bodyData'>) => api.get<T>(url, config);
 
-  const callEndpointDELETE = async <T extends Record<'data', T | null>>({
+  const callDELETEMethod = async <T extends Record<'data', T | null>>({
     url,
     config,
   }: AxiosParams) => api.delete<unknown, T>(url, config);
 
-  const callEndpointPOST = async <
+  const callPOSTMethod = async <
     T extends Record<'data', T | null>,
     V extends Record<symbol, unknown>,
   >({
@@ -31,7 +33,7 @@ export const useAxios = () => {
     config,
   }: AxiosParams<V>) => api.post<unknown, T, V>(url, bodyData, config);
 
-  const callEndpointPUT = async <
+  const callPUTMethod = async <
     T extends Record<'data', T | null>,
     V extends Record<symbol, unknown>,
   >({
@@ -40,7 +42,7 @@ export const useAxios = () => {
     config,
   }: AxiosParams<V>) => api.put<unknown, T, V>(url, bodyData, config);
 
-  const callEndpointPATCH = async <
+  const callPATCHMethod = async <
     T extends Record<'data', T | null>,
     V extends Record<symbol, unknown>,
   >({
@@ -51,11 +53,11 @@ export const useAxios = () => {
 
   return {
     functions: {
-      callEndpointGET,
-      callEndpointDELETE,
-      callEndpointPOST,
-      callEndpointPUT,
-      callEndpointPATCH,
+      callGETMethod,
+      callDELETEMethod,
+      callPOSTMethod,
+      callPUTMethod,
+      callPATCHMethod,
     },
   };
 };

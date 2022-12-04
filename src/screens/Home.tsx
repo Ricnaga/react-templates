@@ -8,15 +8,14 @@ enum HomeData {
 
 export function HomeScreen() {
   const {
-    functions: { callEndpointGET },
+    functions: { callGETMethod },
   } = useAxios();
   const formik = useFormik({
     initialValues: {
       [HomeData.USER]: '',
       [HomeData.PASSWORD]: '',
     },
-    onSubmit: async () =>
-      callEndpointGET<{ message: string }>({ url: '/user' }),
+    onSubmit: async () => callGETMethod<{ message: string }>({ url: '/user' }),
   });
   return (
     <form onSubmit={formik.handleSubmit}>
