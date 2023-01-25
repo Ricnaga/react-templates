@@ -3,12 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@chakra-ui/react": "^2.4.4",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
     "@types/jest": "^27.0.1",
     "axios": "^1.2.1",
     "formik": "^2.2.9",
+    "framer-motion": "^8.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.6.0",
@@ -22,7 +26,7 @@
     "precommit": "lint-staged",
     "prepare": "husky install",
     "typecheck": "tsc -p tsconfig.json --pretty --noEmit",
-    "mock": "yarn json-server -p 3333 -d 750 src/application/api/mocks/json-server/db.json"
+    "mock": "yarn json-server -p 3333 -d 1250 src/application/api/mocks/json-server/db.json"
   },
   "browserslist": {
     "production": [

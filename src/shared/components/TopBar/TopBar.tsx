@@ -1,9 +1,13 @@
-import { HOME } from '../../../application/routes/paths';
+import { TODO, HOME } from '../../../application/routes/paths';
 
 const links = [
   {
     href: HOME,
     children: 'Home',
+  },
+  {
+    href: TODO,
+    children: 'TODO',
   },
 ];
 
@@ -17,9 +21,6 @@ export function TopBar() {
           </a>
         ))}
       </nav>
-      <div>
-        <h1>oi</h1>
-      </div>
     </div>
   );
 }
