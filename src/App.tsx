@@ -1,10 +1,13 @@
+import { ChakraUI } from '@application/theme/chakra/context';
 import { RouterContext } from './application/routes/context';
 import { TopBar } from './shared/components/TopBar/TopBar';
 
 export function App() {
   return (
-    <RouterContext>
-      <TopBar />
-    </RouterContext>
+    <ChakraUI>
+      <RouterContext>
+        <TopBar />
+      </RouterContext>
+    </ChakraUI>
   );
 }

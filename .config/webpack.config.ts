@@ -18,7 +18,7 @@ const config: Configuration = {
     alias: {
       '@screens': path.join(process.cwd(), 'src', 'screens'),
       '@shared': path.join(process.cwd(), 'src', 'shared'),
-      '@applcation': path.join(process.cwd(), 'src', 'applcation'),
+      '@application': path.join(process.cwd(), 'src', 'application'),
     },
     plugins: [
       new TsconfigPathsPlugin({
