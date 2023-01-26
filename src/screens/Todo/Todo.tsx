@@ -13,21 +13,21 @@ const MOCK_DATA: Array<TodoData> = [
   { id: Math.random().toString(), status: 2, description: 'Pegar calça' },
   { id: Math.random().toString(), status: 3, description: 'Pegar sapato' },
   { id: Math.random().toString(), status: 1, description: 'Pegar blusa' },
-  { id: Math.random().toString(), status: 2, description: 'Pegar nada' },
+  { id: Math.random().toString(), status: 2, description: 'Pegar bolsa' },
 ];
 
-const filterTodoStatus = (typeTodo: TodoStatus) =>
-  MOCK_DATA.filter((data) => data.status === typeTodo);
+const filterByStatus = (status: TodoStatus) =>
+  MOCK_DATA.filter((data) => data.status === status);
 
 export function TodoScreen() {
   const [todo, setTodo] = useState<Array<TodoData>>(
-    filterTodoStatus(TodoStatus.TODO),
+    filterByStatus(TodoStatus.TODO),
   );
   const [doing, setDoing] = useState<Array<TodoData>>(
-    filterTodoStatus(TodoStatus.DOING),
+    filterByStatus(TodoStatus.DOING),
   );
   const [done, setDone] = useState<Array<TodoData>>(
-    filterTodoStatus(TodoStatus.DONE),
+    filterByStatus(TodoStatus.DONE),
   );
 
   const mapById = (id: string, description: string, data: Array<TodoData>) =>
@@ -51,8 +51,8 @@ export function TodoScreen() {
   const filterById = (id: string, data: Array<TodoData>) =>
     data.filter((newState) => newState.id !== id);
 
-  const handleRemoveTodo = (id: string, typeTodo: TodoStatus) => {
-    if (typeTodo === TodoStatus.DOING) {
+  const handleRemoveTodo = (id: string, status: TodoStatus) => {
+    if (status === TodoStatus.DOING) {
       setDoing((state) => filterById(id, state));
       return;
     }
@@ -101,8 +101,8 @@ export function TodoScreen() {
         <CardTodo
           title={TodoStatus.TODO}
           data={todo}
-          handleChange={(args) => handleChangeStatus(args)}
-          handleRemove={(id, status) => handleRemoveTodo(id, status)}
+          handleChange={handleChangeStatus}
+          handleRemove={handleRemoveTodo}
           handleAdd={handleAddTodo}
           handleMove={handleMoveTodo}
         />
@@ -111,8 +111,8 @@ export function TodoScreen() {
         <CardTodo
           title={TodoStatus.DOING}
           data={doing}
-          handleChange={(args) => handleChangeStatus(args)}
-          handleRemove={(id, status) => handleRemoveTodo(id, status)}
+          handleChange={handleChangeStatus}
+          handleRemove={handleRemoveTodo}
           handleAdd={handleAddTodo}
           handleMove={handleMoveTodo}
         />
@@ -121,8 +121,8 @@ export function TodoScreen() {
         <CardTodo
           title={TodoStatus.DONE}
           data={done}
-          handleChange={(args) => handleChangeStatus(args)}
-          handleRemove={(id, status) => handleRemoveTodo(id, status)}
+          handleChange={handleChangeStatus}
+          handleRemove={handleRemoveTodo}
           handleAdd={handleAddTodo}
           handleMove={handleMoveTodo}
         />
