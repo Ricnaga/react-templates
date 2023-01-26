@@ -1,3 +1,4 @@
+import { Grid, Link } from '@chakra-ui/react';
 import { TODO, HOME } from '../../../application/routes/paths';
 
 const links = [
@@ -13,14 +14,14 @@ const links = [
 
 export function TopBar() {
   return (
-    <div>
+    <Grid my={4} px={4}>
       <nav>
         {links.map(({ href, children }) => (
-          <a key={children} href={href}>
+          <Link key={children} href={href} mr={2} fontSize="lg">
             {children}
-          </a>
+          </Link>
         ))}
       </nav>
-    </div>
+    </Grid>
   );
 }
