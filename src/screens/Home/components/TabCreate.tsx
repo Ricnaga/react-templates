@@ -35,18 +35,20 @@ export function TabCreate() {
       })
         .then(() =>
           toast({
+            status: 'success',
             title: 'Success',
             description: 'This user was created',
-            status: 'success',
             isClosable: true,
+            position: 'bottom-left',
           }),
         )
         .catch(() =>
           toast({
+            status: 'error',
             title: 'Error',
             description: 'This user was not created',
-            status: 'error',
             isClosable: true,
+            position: 'bottom-left',
           }),
         ),
   });
