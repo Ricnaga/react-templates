@@ -16,6 +16,10 @@ type TabListProps = {
 export function TabList({ users }: TabListProps) {
   const [value, setValue] = useState<string>('');
 
+  const filteredUsers = users.filter((user) =>
+    user.name.toLowerCase().includes(value.toLowerCase()),
+  );
+
   return (
     <Grid templateColumns="repeat(1,1fr)" gap={6}>
       <GridItem>
@@ -30,7 +34,7 @@ export function TabList({ users }: TabListProps) {
         </FormControl>
       </GridItem>
       <Grid templateColumns="repeat(3, 1fr)" gap={4}>
-        {users.map((user) => (
+        {filteredUsers.map((user) => (
           <GridItem key={user.id}>
             <Card bgColor="blue.100">
               <CardBody>
