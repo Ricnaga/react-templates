@@ -21,13 +21,14 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "dev": "cross-env TS_NODE_PROJECT=\"tsconfig-for-webpack.json\" webpack serve --config .config/webpack.dev.ts",
+    "start": "cross-env TS_NODE_PROJECT=\"tsconfig-for-webpack.json\" webpack serve --config .config/webpack.dev.ts",
     "lint": "eslint --ext .ts --ext .tsx src",
     "lint:fix": "yarn lint --fix",
     "precommit": "lint-staged",
     "prepare": "husky install",
     "typecheck": "tsc -p tsconfig.json --pretty --noEmit",
-    "mock": "yarn json-server -p 3333 -d 1250 src/application/api/mocks/json-server/db.json"
+    "mock": "yarn json-server -p 3333 -d 1250 src/application/api/mocks/json-server/db.json",
+    "dev": "concurrently \"yarn start\" \"yarn mock\""
   },
   "browserslist": {
     "production": [
@@ -58,6 +59,7 @@
     "@typescript-eslint/parser": "^5.49.0",
     "babel-loader": "^9.1.2",
     "clean-webpack-plugin": "^4.0.0",
+    "concurrently": "^7.6.0",
     "cross-env": "^7.0.3",
     "css-loader": "^6.7.3",
     "dotenv-webpack": "^8.0.1",
