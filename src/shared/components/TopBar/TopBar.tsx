@@ -14,7 +14,7 @@ const links = [
 
 export function TopBar() {
   return (
-    <Grid my={4} px={4}>
+    <Grid my={4}>
       <nav>
         {links.map(({ href, children }) => (
           <Link key={children} href={href} mr={2} fontSize="lg">

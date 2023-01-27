@@ -136,7 +136,7 @@ export function CardTodo({
                 />
                 <IconButton
                   borderRadius="full"
-                  bgColor="red.500"
+                  colorScheme="red"
                   icon={<CloseIcon />}
                   aria-label="Remove icon"
                   mx={2}

@@ -102,7 +102,7 @@ export function TodoScreen() {
   ];
 
   return (
-    <Grid paddingX={4} gap={4} templateColumns="repeat(3,1fr)">
+    <Grid gap={4} templateColumns="repeat(3,1fr)">
       {cardComponent.map(({ data, title }) => (
         <GridItem key={title}>
           <CardTodo
