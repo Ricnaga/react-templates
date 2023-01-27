@@ -7,6 +7,7 @@ import {
   Input,
   useToast,
 } from '@chakra-ui/react';
+import { useSnackbar } from '@shared/components/Snackbar/useSnackbar';
 import { useFormik } from 'formik';
 
 enum FormikValues {
@@ -20,7 +21,7 @@ type TabCreateProps = {
 };
 
 export function TabCreate({ handleUpdateUsers }: TabCreateProps) {
-  const toast = useToast();
+  const { onSnackBar } = useSnackbar();
   const {
     functions: { callPOST },
   } = useAxios();
@@ -38,24 +39,8 @@ export function TabCreate({ handleUpdateUsers }: TabCreateProps) {
         },
       })
         .then(() => handleUpdateUsers())
-        .then(() =>
-          toast({
-            status: 'success',
-            title: 'Success',
-            description: 'This user was created',
-            isClosable: true,
-            position: 'bottom-left',
-          }),
-        )
-        .catch(() =>
-          toast({
-            status: 'error',
-            title: 'Error',
-            description: 'This user was not created',
-            isClosable: true,
-            position: 'bottom-left',
-          }),
-        ),
+        .then(() => onSnackBar('This user was created'))
+        .catch(() => onSnackBar('This user was not created', 'error')),
   });
 
   return (
