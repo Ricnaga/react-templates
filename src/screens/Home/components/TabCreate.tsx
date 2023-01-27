@@ -15,7 +15,11 @@ enum FormikValues {
 
 type FormikSubmit = Record<'name', string>;
 
-export function TabCreate() {
+type TabCreateProps = {
+  handleUpdateUsers: () => void;
+};
+
+export function TabCreate({ handleUpdateUsers }: TabCreateProps) {
   const toast = useToast();
   const {
     functions: { callPOST },
@@ -33,6 +37,7 @@ export function TabCreate() {
           name: values.name,
         },
       })
+        .then(() => handleUpdateUsers())
         .then(() =>
           toast({
             status: 'success',

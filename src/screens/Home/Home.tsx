@@ -24,15 +24,21 @@ export function HomeScreen() {
   const [tabIndex, setTabIndex] = useState(0);
   const [users, setUsers] = useState<Array<User>>([]);
 
-  const getUsers = async () => callGET<Array<User>>({ url: '/user' });
+  const getUsers = async () =>
+    callGET<Array<User>>({ url: '/user' }).then((response) =>
+      setUsers(response.data),
+    );
 
   useEffect(() => {
-    getUsers().then((response) => setUsers(response.data));
+    getUsers();
   }, []);
 
   const userTabs = [
     { title: TabTitle.LIST, component: <TabList users={users} /> },
-    { title: TabTitle.CREATE, component: <TabCreate /> },
+    {
+      title: TabTitle.CREATE,
+      component: <TabCreate handleUpdateUsers={getUsers} />,
+    },
   ];
 
   return (
