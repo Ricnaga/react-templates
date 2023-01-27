@@ -19,6 +19,14 @@ const MOCK_DATA: Array<TodoData> = [
 const filterByStatus = (status: TodoStatus) =>
   MOCK_DATA.filter((data) => data.status === status);
 
+const mapById = (id: string, description: string, data: Array<TodoData>) =>
+  data.map((newState) =>
+    newState.id === id ? { ...newState, description } : newState,
+  );
+
+const filterById = (id: string, data: Array<TodoData>) =>
+  data.filter((newState) => newState.id !== id);
+
 export function TodoScreen() {
   const [todo, setTodo] = useState<Array<TodoData>>(
     filterByStatus(TodoStatus.TODO),
@@ -29,11 +37,6 @@ export function TodoScreen() {
   const [done, setDone] = useState<Array<TodoData>>(
     filterByStatus(TodoStatus.DONE),
   );
-
-  const mapById = (id: string, description: string, data: Array<TodoData>) =>
-    data.map((newState) =>
-      newState.id === id ? { ...newState, description } : newState,
-    );
 
   const handleChangeStatus = ({
     id,
@@ -47,9 +50,6 @@ export function TodoScreen() {
 
     setTodo((state) => mapById(id, description, state));
   };
-
-  const filterById = (id: string, data: Array<TodoData>) =>
-    data.filter((newState) => newState.id !== id);
 
   const handleRemoveTodo = (id: string, status: TodoStatus) => {
     if (status === TodoStatus.DOING) {
@@ -95,38 +95,26 @@ export function TodoScreen() {
     }
   };
 
+  const cardComponent = [
+    { title: TodoStatus.TODO, data: todo },
+    { title: TodoStatus.DOING, data: doing },
+    { title: TodoStatus.DONE, data: done },
+  ];
+
   return (
     <Grid paddingX={4} gap={4} templateColumns="repeat(3,1fr)">
-      <GridItem>
-        <CardTodo
-          title={TodoStatus.TODO}
-          data={todo}
-          handleChange={handleChangeStatus}
-          handleRemove={handleRemoveTodo}
-          handleAdd={handleAddTodo}
-          handleMove={handleMoveTodo}
-        />
-      </GridItem>
-      <GridItem>
-        <CardTodo
-          title={TodoStatus.DOING}
-          data={doing}
-          handleChange={handleChangeStatus}
-          handleRemove={handleRemoveTodo}
-          handleAdd={handleAddTodo}
-          handleMove={handleMoveTodo}
-        />
-      </GridItem>
-      <GridItem>
-        <CardTodo
-          title={TodoStatus.DONE}
-          data={done}
-          handleChange={handleChangeStatus}
-          handleRemove={handleRemoveTodo}
-          handleAdd={handleAddTodo}
-          handleMove={handleMoveTodo}
-        />
-      </GridItem>
+      {cardComponent.map(({ data, title }) => (
+        <GridItem key={title}>
+          <CardTodo
+            title={title}
+            data={data}
+            handleChange={handleChangeStatus}
+            handleRemove={handleRemoveTodo}
+            handleAdd={handleAddTodo}
+            handleMove={handleMoveTodo}
+          />
+        </GridItem>
+      ))}
     </Grid>
   );
 }
