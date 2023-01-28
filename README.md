@@ -5,7 +5,7 @@
 
 <div align="center">
 
-# dot-cecilia
+# react templates
 
 </div>
 
