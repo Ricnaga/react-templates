@@ -17,13 +17,13 @@ export const useAxios = () => {
   const callGET = async <T>({ url, config }: Omit<AxiosParams, 'bodyData'>) =>
     api.get<T>(url, config);
 
-  const callDELETE = async <T extends Record<'data', T | null>>({
+  const callDELETE = async <T extends Record<'data', T | unknown>>({
     url,
     config,
   }: AxiosParams) => api.delete<unknown, T>(url, config);
 
   const callPOST = async <
-    T extends Record<'data', T | null>,
+    T extends Record<'data', T | unknown>,
     V extends Record<symbol, unknown>,
   >({
     url,
@@ -32,7 +32,7 @@ export const useAxios = () => {
   }: AxiosParams<V>) => api.post<unknown, T, V>(url, bodyData, config);
 
   const callPUT = async <
-    T extends Record<'data', T | null>,
+    T extends Record<'data', T | unknown>,
     V extends Record<symbol, unknown>,
   >({
     url,
