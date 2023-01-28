@@ -22,19 +22,31 @@ export function HomeScreen() {
     functions: { callGET },
   } = useAxios();
   const [tabIndex, setTabIndex] = useState(0);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [users, setUsers] = useState<Array<User>>([]);
 
-  const getUsers = async () =>
-    callGET<Array<User>>({ url: '/user' }).then((response) =>
-      setUsers(response.data),
-    );
+  const getUsers = async () => {
+    setIsLoading(true);
+    return callGET<Array<User>>({ url: '/user' })
+      .then((response) => setUsers(response.data))
+      .finally(() => setIsLoading(false));
+  };
 
   useEffect(() => {
     getUsers();
   }, []);
 
   const userTabs = [
-    { title: TabTitle.LIST, component: <TabList users={users} /> },
+    {
+      title: TabTitle.LIST,
+      component: (
+        <TabList
+          users={users}
+          isLoading={isLoading}
+          onRefetchUsers={getUsers}
+        />
+      ),
+    },
     {
       title: TabTitle.CREATE,
       component: <TabCreate handleUpdateUsers={getUsers} />,

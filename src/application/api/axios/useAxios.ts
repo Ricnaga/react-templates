@@ -41,7 +41,7 @@ export const useAxios = () => {
   }: AxiosParams<V>) => api.put<unknown, T, V>(url, bodyData, config);
 
   const callPATCH = async <
-    T extends Record<'data', T | null>,
+    T extends Record<'data', T | unknown>,
     V extends Record<symbol, unknown>,
   >({
     url,
