@@ -1,20 +1,20 @@
 import {
-  ArrowLeftIcon,
-  CheckIcon,
-  EditIcon,
-  CloseIcon,
-  ArrowRightIcon,
   AddIcon,
+  ArrowLeftIcon,
+  ArrowRightIcon,
+  CheckIcon,
+  DeleteIcon,
+  EditIcon,
 } from '@chakra-ui/icons';
 import {
   Card,
-  CardHeader,
   CardBody,
+  CardFooter,
+  CardHeader,
   Grid,
   GridItem,
   IconButton,
   Input,
-  CardFooter,
   Text,
 } from '@chakra-ui/react';
 import { useState } from 'react';
@@ -137,7 +137,7 @@ export function CardTodo({
                 <IconButton
                   borderRadius="full"
                   colorScheme="red"
-                  icon={<CloseIcon />}
+                  icon={<DeleteIcon />}
                   aria-label="Remove icon"
                   mx={2}
                   onClick={() => handleRemove(todo.id, title)}
