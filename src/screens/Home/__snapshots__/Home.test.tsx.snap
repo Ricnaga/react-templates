@@ -1,0 +1,219 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Page: HomePage should render correctly 1`] = `
+<div>
+  <div
+    class="chakra-tabs css-13o7eu2"
+  >
+    <div
+      aria-orientation="horizontal"
+      class="chakra-tabs__tablist css-1xhq01z"
+      role="tablist"
+    >
+      <button
+        aria-controls="tabs-:r0:--tabpanel-0"
+        aria-selected="true"
+        class="chakra-tabs__tab css-1pjn7in"
+        data-index="0"
+        id="tabs-:r0:--tab-0"
+        role="tab"
+        tabindex="0"
+        type="button"
+      >
+        List
+      </button>
+      <button
+        aria-controls="tabs-:r0:--tabpanel-1"
+        aria-selected="false"
+        class="chakra-tabs__tab css-1pjn7in"
+        data-index="1"
+        id="tabs-:r0:--tab-1"
+        role="tab"
+        tabindex="-1"
+        type="button"
+      >
+        Create
+      </button>
+    </div>
+    <div
+      class="chakra-tabs__tab-panels css-8atqhb"
+    >
+      <div
+        aria-labelledby="tabs-:r0:--tab-0"
+        class="chakra-tabs__tab-panel css-a5mhaz"
+        id="tabs-:r0:--tabpanel-0"
+        role="tabpanel"
+        tabindex="0"
+      >
+        <div
+          class="css-1269ne9"
+        >
+          <div
+            class="css-0"
+          >
+            <div
+              class="chakra-skeleton css-10nqbpc"
+            />
+          </div>
+          <div
+            class="css-1vlk4q9"
+          >
+            <div
+              class="css-0"
+            >
+              <div
+                class="chakra-card css-jv498s"
+              >
+                <div
+                  class="chakra-card__body css-1idwstw"
+                >
+                  <div
+                    class="chakra-skeleton css-1j2sw9f"
+                  />
+                  <div
+                    class="chakra-skeleton css-168kmxj"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="css-0"
+            >
+              <div
+                class="chakra-card css-jv498s"
+              >
+                <div
+                  class="chakra-card__body css-1idwstw"
+                >
+                  <div
+                    class="chakra-skeleton css-1j2sw9f"
+                  />
+                  <div
+                    class="chakra-skeleton css-168kmxj"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="css-0"
+            >
+              <div
+                class="chakra-card css-jv498s"
+              >
+                <div
+                  class="chakra-card__body css-1idwstw"
+                >
+                  <div
+                    class="chakra-skeleton css-1j2sw9f"
+                  />
+                  <div
+                    class="chakra-skeleton css-168kmxj"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="css-0"
+            >
+              <div
+                class="chakra-card css-jv498s"
+              >
+                <div
+                  class="chakra-card__body css-1idwstw"
+                >
+                  <div
+                    class="chakra-skeleton css-1j2sw9f"
+                  />
+                  <div
+                    class="chakra-skeleton css-168kmxj"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="css-0"
+            >
+              <div
+                class="chakra-card css-jv498s"
+              >
+                <div
+                  class="chakra-card__body css-1idwstw"
+                >
+                  <div
+                    class="chakra-skeleton css-1j2sw9f"
+                  />
+                  <div
+                    class="chakra-skeleton css-168kmxj"
+                  />
+                </div>
+              </div>
+            </div>
+            <div
+              class="css-0"
+            >
+              <div
+                class="chakra-card css-jv498s"
+              >
+                <div
+                  class="chakra-card__body css-1idwstw"
+                >
+                  <div
+                    class="chakra-skeleton css-1j2sw9f"
+                  />
+                  <div
+                    class="chakra-skeleton css-168kmxj"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        aria-labelledby="tabs-:r0:--tab-1"
+        class="chakra-tabs__tab-panel css-a5mhaz"
+        hidden=""
+        id="tabs-:r0:--tabpanel-1"
+        role="tabpanel"
+        tabindex="0"
+      >
+        <form>
+          <div
+            class="css-c19cha"
+          >
+            <div
+              class="chakra-form-control css-1kxonj9"
+              role="group"
+            >
+              <label
+                class="chakra-form__label css-g6pte"
+                for="field-:r6:"
+                id="field-:r6:-label"
+              >
+                Name
+              </label>
+              <input
+                class="chakra-input css-1qrx3zr"
+                id="field-:r6:"
+                name="name"
+                placeholder="Insert a name."
+                type="text"
+              />
+            </div>
+            <button
+              class="chakra-button css-8bo503"
+              type="submit"
+            >
+              Criar
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</div>
+`;
