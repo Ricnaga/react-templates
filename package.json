@@ -22,8 +22,8 @@
     "web-vitals": "^2.1.0"
   },
   "scripts": {
-    "start": "cross-env TS_NODE_PROJECT=\".config/tsconfig-for-webpack.json\" webpack serve --config .config/webpack.dev.ts",
-    "build": "cross-env TS_NODE_PROJECT=\".config/tsconfig-for-webpack.json\" webpack --config .config/webpack.prod.ts",
+    "start": "cross-env TS_NODE_PROJECT=\".config/webpack.tsconfig.json\" webpack serve --config .config/webpack.dev.ts",
+    "build": "cross-env TS_NODE_PROJECT=\".config/webpack.tsconfig.json\" webpack --config .config/webpack.prod.ts",
     "lint": "eslint --ext .ts --ext .tsx src",
     "lint:fix": "yarn lint --fix",
     "precommit": "lint-staged",

@@ -17,7 +17,13 @@
 - [ChakraUI](https://chakra-ui.com/) - UI para react
 - [Webpack](https://webpack.js.org/) - Bundler para gerenciar a aplicação
 - [Formik](https://formik.org/docs/overview/) - Manipulação de formulário
-
+- [Testing library](https://testing-library.com/) - Testes unitários
+- [ESLint](https://eslint.org/) - linter para código
+- [Prettier](https://prettier.io/) - formatador de código
+- [Husky](https://typicode.github.io/husky/#/) - Capturar determinado momento de um commit
+- [Lint-staged](https://github.com/okonet/lint-staged) - Executar ações em determinado momento de um commit
+- [Commitlint](https://commitlint.js.org/#/) - Formatador de commits
+- [Commitizen](https://github.com/commitizen/cz-cli) - Automiza mensagens de commit
 
 ## <div align="center">Requisitos</div>
 
