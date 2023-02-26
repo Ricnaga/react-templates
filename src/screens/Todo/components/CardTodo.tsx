@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import {
   AddIcon,
   ArrowLeftIcon,
@@ -17,7 +19,6 @@ import {
   Input,
   Text,
 } from '@chakra-ui/react';
-import { useState } from 'react';
 
 export enum TodoStatus {
   TODO = 1,

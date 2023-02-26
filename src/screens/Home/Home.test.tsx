@@ -1,4 +1,5 @@
 import { renderWithTheme } from '@application/test/testing-library';
+
 import { HomeScreen } from './Home';
 
 describe('Page: HomePage', () => {

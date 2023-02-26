@@ -1,5 +1,6 @@
-import { useAxios } from '@application/api/axios/useAxios';
 import { Button, ModalFooter } from '@chakra-ui/react';
+
+import { useAxios } from '@application/api/axios/useAxios';
 import { useSnackbar } from '@shared/components/Snackbar/useSnackbar';
 
 type RemoveUserUserProps = {

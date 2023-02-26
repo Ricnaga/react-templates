@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 import { DeleteIcon, EditIcon } from '@chakra-ui/icons';
 import {
   Card,
@@ -10,12 +12,13 @@ import {
   Text,
   useDisclosure,
 } from '@chakra-ui/react';
+
 import { Modal } from '@shared/components/Modal/Modal';
-import { useState } from 'react';
-import { User } from '../Home';
+
 import { EditUser } from './EditUser';
 import { RemoveUser } from './RemoveUser';
 import { TabListLoading } from './TabListLoading';
+import { User } from '../Home';
 
 type TabListProps = {
   users: Array<User>;

@@ -1,5 +1,7 @@
-import { HomeScreen, TodoScreen } from '@screens';
 import { Route, Routes } from 'react-router-dom';
+
+import { HomeScreen, TodoScreen } from '@screens';
+
 import { HOME, TODO } from './paths';
 
 const routes = [

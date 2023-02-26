@@ -1,5 +1,7 @@
-import { Grid, GridItem } from '@chakra-ui/react';
 import { useState } from 'react';
+
+import { Grid, GridItem } from '@chakra-ui/react';
+
 import {
   CardTodo,
   HandleChangeProps,

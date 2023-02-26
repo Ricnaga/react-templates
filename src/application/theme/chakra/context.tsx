@@ -1,5 +1,6 @@
-import { ChakraProvider } from '@chakra-ui/react';
 import { ReactNode } from 'react';
+
+import { ChakraProvider } from '@chakra-ui/react';
 
 type ChakraUIProps = Partial<Record<'children', ReactNode | JSX.Element>>;
 

@@ -1,5 +1,6 @@
 import { Grid, Link } from '@chakra-ui/react';
-import { TODO, HOME } from '../../../application/routes/paths';
+
+import { HOME, TODO } from '../../../application/routes/paths';
 
 const links = [
   {

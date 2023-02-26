@@ -21,12 +21,39 @@
   },
   "plugins": ["react", "@typescript-eslint", "prettier", "import"],
   "rules": {
-    "prettier/prettier": [
+    "sort-imports": [
+      "error",
+      { "ignoreCase": true, "ignoreDeclarationSort": true }
+    ],
+    "import/order": [
       "error",
       {
-        "endOfLine": "auto"
+        "groups": [
+          ["external", "builtin"],
+          "internal",
+          ["sibling", "parent"],
+          "index"
+        ],
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "@",
+            "group": "internal"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["internal", "react"],
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
       }
     ],
+    "prettier/prettier": "error",
     "import/extensions": [
       "error",
       "ignorePackages",

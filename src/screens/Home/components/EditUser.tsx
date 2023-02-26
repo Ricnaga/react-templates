@@ -1,13 +1,15 @@
-import { useAxios } from '@application/api/axios/useAxios';
 import {
-  ModalBody,
+  Button,
   FormControl,
   Input,
+  ModalBody,
   ModalFooter,
-  Button,
 } from '@chakra-ui/react';
-import { useSnackbar } from '@shared/components/Snackbar/useSnackbar';
 import { useFormik } from 'formik';
+
+import { useAxios } from '@application/api/axios/useAxios';
+import { useSnackbar } from '@shared/components/Snackbar/useSnackbar';
+
 import { User } from '../Home';
 
 type EditUserProps = {

@@ -1,7 +1,8 @@
-import { useAxios } from '@application/api/axios/useAxios';
 import { Button, FormControl, FormLabel, Grid, Input } from '@chakra-ui/react';
-import { useSnackbar } from '@shared/components/Snackbar/useSnackbar';
 import { useFormik } from 'formik';
+
+import { useAxios } from '@application/api/axios/useAxios';
+import { useSnackbar } from '@shared/components/Snackbar/useSnackbar';
 
 enum FormikValues {
   NAME = 'name',

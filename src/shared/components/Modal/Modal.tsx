@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 import {
   Modal as ChakraModal,
   ModalCloseButton,
@@ -5,7 +7,6 @@ import {
   ModalHeader,
   ModalOverlay,
 } from '@chakra-ui/react';
-import { ReactNode } from 'react';
 
 type ModalProps = {
   isOpen: boolean;

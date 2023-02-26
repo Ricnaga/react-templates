@@ -1,12 +1,15 @@
-import { useAxios } from '@application/api/axios/useAxios';
+import { useEffect, useState } from 'react';
+
 import {
-  Tab,
   TabList as ChakraTabList,
+  Tab,
   TabPanel,
   TabPanels,
   Tabs,
 } from '@chakra-ui/react';
-import { useEffect, useState } from 'react';
+
+import { useAxios } from '@application/api/axios/useAxios';
+
 import { TabCreate } from './components/TabCreate';
 import { TabList } from './components/TabList';
 
