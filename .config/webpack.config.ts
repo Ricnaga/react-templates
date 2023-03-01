@@ -10,9 +10,8 @@ const extensions = ['.js', '.jsx', '.json', '.ts', '.tsx'];
 const config: Configuration = {
   entry: path.join(process.cwd(), 'src', 'index.tsx'),
   output: {
-    publicPath: '/',
     path: path.join(process.cwd(), 'build'),
-    filename: 'index.bundle.js',
+    filename: '[name]-[contenthash].bundle.js',
   },
   resolve: {
     alias: {
