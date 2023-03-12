@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Page: Home should render correctly 1`] = `
+exports[`Page: Home render correctly 1`] = `
 <div>
   <div
     class="chakra-tabs css-13o7eu2"

@@ -5,11 +5,11 @@ import {
   fireEvent,
   render,
   renderHook,
-  RenderOptions,
-  RenderResult,
   screen,
   waitFor,
+  waitForElementToBeRemoved,
 } from '@testing-library/react';
+import type { RenderOptions, RenderResult } from '@testing-library/react';
 import testingUserEvent from '@testing-library/user-event';
 
 import { ThemeProvider } from '@application/theme/chakra/context';
@@ -29,4 +29,5 @@ export {
   fireEvent,
   act,
   waitFor,
+  waitForElementToBeRemoved,
 };
