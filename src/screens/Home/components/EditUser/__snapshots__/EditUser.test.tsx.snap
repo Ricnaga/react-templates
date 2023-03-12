@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: EditUser should render correctly 1`] = `
+<div
+  aria-hidden="true"
+  data-aria-hidden="true"
+>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</div>
+`;

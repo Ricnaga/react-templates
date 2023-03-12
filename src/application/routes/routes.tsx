@@ -1,13 +1,13 @@
 import { Route, Routes } from 'react-router-dom';
 
-import { HomeScreen, TodoScreen } from '@screens';
+import { Home, TodoScreen } from '@screens';
 
 import { HOME, TODO } from './paths';
 
 const routes = [
   {
     path: `${HOME}*`,
-    element: <HomeScreen />,
+    element: <Home />,
   },
   {
     path: `${TODO}/*`,

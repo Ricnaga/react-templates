@@ -1,4 +1,5 @@
-import { pathsToModuleNameMapper, JestConfigWithTsJest } from 'ts-jest';
+import { JestConfigWithTsJest, pathsToModuleNameMapper } from 'ts-jest';
+
 import { compilerOptions } from './tsconfig.json';
 
 const config: JestConfigWithTsJest = {
@@ -19,9 +20,10 @@ const config: JestConfigWithTsJest = {
   clearMocks: true,
   collectCoverageFrom: [
     '<rootDir>/src/screens/**/*.[jt]s?(x)',
+    '<rootDir>/src/screens/**/components/**/*.[jt]s?(x)',
+    '<rootDir>/src/shared/components/**/*.[jt]s?(x)',
     '!<rootDir>/src/screens/**/*.{spec,test}.[jt]s?(x)',
     '!<rootDir>/src/screens/index.[jt]s',
-    '<rootDir>/src/shared/components/**/*.[jt]s?(x)',
     '!<rootDir>/src/shared/components/**/*.{spec,test}.[jt]s?(x)',
     '!<rootDir>/src/shared/hooks/*.[jt]s',
   ],

@@ -15,10 +15,10 @@ import {
 
 import { Modal } from '@shared/components/Modal/Modal';
 
-import { EditUser } from './EditUser';
-import { RemoveUser } from './RemoveUser';
-import { TabListLoading } from './TabListLoading';
-import { User } from '../Home';
+import { User } from '../../Home';
+import { EditUser } from '../EditUser/EditUser';
+import { RemoveUser } from '../RemoveUser/RemoveUser';
+import { TabListLoading } from '../TabListLoading';
 
 type TabListProps = {
   users: Array<User>;

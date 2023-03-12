@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: TabCreate should render correctly 1`] = `
+<div>
+  <form>
+    <div
+      class="css-c19cha"
+    >
+      <div
+        class="chakra-form-control css-1kxonj9"
+        role="group"
+      >
+        <label
+          class="chakra-form__label css-g6pte"
+          for="field-:r0:"
+          id="field-:r0:-label"
+        >
+          Name
+        </label>
+        <input
+          class="chakra-input css-1qrx3zr"
+          id="field-:r0:"
+          name="name"
+          placeholder="Insert a name."
+          type="text"
+        />
+      </div>
+      <button
+        class="chakra-button css-8bo503"
+        type="submit"
+      >
+        Criar
+      </button>
+    </div>
+  </form>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</div>
+`;

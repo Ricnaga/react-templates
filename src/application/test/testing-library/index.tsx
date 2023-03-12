@@ -5,6 +5,7 @@ import {
   fireEvent,
   render,
   renderHook,
+  RenderOptions,
   RenderResult,
   screen,
   waitFor,
@@ -13,8 +14,10 @@ import testingUserEvent from '@testing-library/user-event';
 
 import { ThemeProvider } from '@application/theme/chakra/context';
 
-const renderWithTheme = (children: ReactNode | JSX.Element): RenderResult =>
-  render(<ThemeProvider>{children}</ThemeProvider>);
+const renderWithTheme = (
+  children: ReactNode | JSX.Element,
+  options?: RenderOptions,
+): RenderResult => render(<ThemeProvider>{children}</ThemeProvider>, options);
 
 const userEvent = testingUserEvent.setup();
 

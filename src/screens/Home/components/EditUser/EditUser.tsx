@@ -10,7 +10,7 @@ import { useFormik } from 'formik';
 import { useAxios } from '@application/api/axios/useAxios';
 import { useSnackbar } from '@shared/components/Snackbar/useSnackbar';
 
-import { User } from '../Home';
+import { User } from '../../Home';
 
 type EditUserProps = {
   onClose: () => void;

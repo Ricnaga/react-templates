@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: TopBar should render correctly 1`] = `
+<div>
+  <div
+    class="css-1fbc7bo"
+  >
+    <nav>
+      <a
+        class="chakra-link css-1ehl8a5"
+        href="/"
+      >
+        Home
+      </a>
+      <a
+        class="chakra-link css-1ehl8a5"
+        href="/todo"
+      >
+        TODO
+      </a>
+    </nav>
+  </div>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</div>
+`;

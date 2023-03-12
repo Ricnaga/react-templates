@@ -10,8 +10,8 @@ import {
 
 import { useAxios } from '@application/api/axios/useAxios';
 
-import { TabCreate } from './components/TabCreate';
-import { TabList } from './components/TabList';
+import { TabCreate } from './components/TabCreate/TabCreate';
+import { TabList } from './components/TabList/TabList';
 
 enum TabTitle {
   LIST = 'List',
@@ -20,11 +20,11 @@ enum TabTitle {
 
 export type User = Record<'id' | 'name', string>;
 
-export function HomeScreen() {
+export function Home() {
   const {
     functions: { callGET },
   } = useAxios();
-  const [tabIndex, setTabIndex] = useState(0);
+  const [tabIndex, setTabIndex] = useState<number>(0);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [users, setUsers] = useState<Array<User>>([]);
 
