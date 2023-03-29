@@ -1,6 +1,7 @@
 import {
   renderWithTheme,
   screen,
+  userEvent,
   waitForElementToBeRemoved,
 } from '@application/test/testing-library';
 
@@ -26,12 +27,29 @@ jest.mock('@application/api/axios/useAxios', () => ({
   }),
 }));
 
+let containerElement: HTMLElement;
+
 describe('Page: Home', () => {
-  it('render correctly', async () => {
+  beforeEach(async () => {
     const { container } = renderWithTheme(<Home />);
-
+    containerElement = container;
     await waitForElementToBeRemoved(() => screen.getByText(/carregando/i));
+  });
+  it('render correctly', async () => {
+    expect(containerElement).toMatchSnapshot();
+  });
 
-    expect(container).toMatchSnapshot();
+  it('change tabs', async () => {
+    await userEvent.click(
+      screen.getByRole('tab', {
+        name: /create/i,
+      }),
+    );
+
+    expect(
+      screen.getByRole('textbox', {
+        name: /name/i,
+      }),
+    ).toBeInTheDocument();
   });
 });
