@@ -57,7 +57,7 @@ export function Home() {
   ];
 
   return (
-    <Tabs isFitted onChange={(index) => setTabIndex(index)}>
+    <Tabs isFitted onChange={(index: number) => setTabIndex(index)}>
       <ChakraTabList>
         {userTabs.map(({ title }) => (
           <Tab key={title}>{title}</Tab>
