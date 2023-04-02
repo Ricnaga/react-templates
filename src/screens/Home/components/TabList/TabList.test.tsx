@@ -1,8 +1,4 @@
-import {
-  act,
-  renderWithTheme,
-  waitFor,
-} from '@application/test/testing-library';
+import { act, render, waitFor } from '@application/test/testing-library';
 
 import { TabList } from './TabList';
 
@@ -11,7 +7,7 @@ let containerElement: HTMLElement;
 describe('Component: TabList', () => {
   beforeEach(async () => {
     const { container } = await act(() =>
-      renderWithTheme(
+      render(
         <TabList
           isLoading={false}
           onRefetchUsers={jest.fn()}

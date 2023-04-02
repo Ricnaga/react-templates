@@ -1,5 +1,5 @@
 import {
-  renderWithTheme,
+  render,
   screen,
   userEvent,
   waitForElementToBeRemoved,
@@ -31,7 +31,7 @@ let containerElement: HTMLElement;
 
 describe('Page: Home', () => {
   beforeEach(async () => {
-    const { container } = renderWithTheme(<Home />);
+    const { container } = render(<Home />);
     containerElement = container;
     await waitForElementToBeRemoved(() => screen.getByText(/carregando/i));
   });

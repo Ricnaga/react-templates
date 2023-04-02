@@ -1,4 +1,4 @@
-import { renderWithTheme } from '@application/test/testing-library';
+import { render } from '@application/test/testing-library';
 
 import { TopBar } from './TopBar';
 
@@ -6,7 +6,7 @@ let containerElement: HTMLElement;
 
 describe('Component: TopBar', () => {
   beforeEach(() => {
-    const { container } = renderWithTheme(<TopBar />);
+    const { container } = render(<TopBar />);
     containerElement = container;
   });
 

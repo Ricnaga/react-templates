@@ -1,9 +1,4 @@
-import {
-  renderWithTheme,
-  screen,
-  userEvent,
-  waitFor,
-} from '@application/test/testing-library';
+import { render, screen, userEvent } from '@application/test/testing-library';
 import { Modal } from '@shared/components/Modal/Modal';
 
 import { EditUser } from './EditUser';
@@ -35,7 +30,7 @@ jest.mock('@application/api/axios/useAxios', () => ({
 
 describe('Component: EditUser', () => {
   beforeEach(() => {
-    const { container } = renderWithTheme(
+    const { container } = render(
       <Modal isOpen onClose={mockedOnClose}>
         <EditUser
           onClose={jest.fn}
