@@ -1,8 +1,8 @@
 import { Route, Routes } from 'react-router-dom';
 
-import { Home, TodoScreen } from '@screens';
+import { Home, TableSampleScreen, TodoScreen } from '@screens';
 
-import { HOME, TODO } from './paths';
+import { HOME, TABLE_SAMPLE, TODO } from './paths';
 
 const routes = [
   {
@@ -12,6 +12,10 @@ const routes = [
   {
     path: `${TODO}/*`,
     element: <TodoScreen />,
+  },
+  {
+    path: `${TABLE_SAMPLE}/*`,
+    element: <TableSampleScreen />,
   },
 ];
 
