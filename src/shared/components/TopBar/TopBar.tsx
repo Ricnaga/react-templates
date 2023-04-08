@@ -1,6 +1,6 @@
 import { Grid, Link } from '@chakra-ui/react';
 
-import { HOME, TODO } from '../../../application/routes/paths';
+import { HOME, TABLE_SAMPLE, TODO } from '../../../application/routes/paths';
 
 const links = [
   {
@@ -10,6 +10,10 @@ const links = [
   {
     href: TODO,
     children: 'TODO',
+  },
+  {
+    href: TABLE_SAMPLE,
+    children: 'Table Sample',
   },
 ];
 

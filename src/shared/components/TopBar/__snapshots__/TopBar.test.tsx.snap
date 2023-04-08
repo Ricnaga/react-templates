@@ -18,6 +18,12 @@ exports[`Component: TopBar should render correctly 1`] = `
       >
         TODO
       </a>
+      <a
+        class="chakra-link css-1ehl8a5"
+        href="/table"
+      >
+        Table Sample
+      </a>
     </nav>
   </div>
   <span

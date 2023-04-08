@@ -1,16 +1,7 @@
-import { ReactNode } from 'react';
+import { RouterProvider } from 'react-router-dom';
 
-import { BrowserRouter } from 'react-router-dom';
+import { router } from './routes';
 
-import { RoutesPages } from './routes';
-
-type RouterContextProps = Partial<Record<'children', ReactNode | JSX.Element>>;
-
-export function RouterContext({ children }: RouterContextProps) {
-  return (
-    <BrowserRouter>
-      {children}
-      <RoutesPages />
-    </BrowserRouter>
-  );
+export function RouterContext() {
+  return <RouterProvider router={router} />;
 }

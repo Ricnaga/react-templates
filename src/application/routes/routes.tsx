@@ -1,30 +1,39 @@
-import { Route, Routes } from 'react-router-dom';
+import { ReactNode } from 'react';
+
+import { Grid } from '@chakra-ui/react';
+import { createBrowserRouter, Outlet } from 'react-router-dom';
 
 import { Home, TableSampleScreen, TodoScreen } from '@screens';
+import { TopBar } from '@shared/components/TopBar/TopBar';
 
 import { HOME, TABLE_SAMPLE, TODO } from './paths';
 
-const routes = [
-  {
-    path: `${HOME}*`,
-    element: <Home />,
-  },
-  {
-    path: `${TODO}/*`,
-    element: <TodoScreen />,
-  },
-  {
-    path: `${TABLE_SAMPLE}/*`,
-    element: <TableSampleScreen />,
-  },
-];
-
-export function RoutesPages() {
+function Container() {
   return (
-    <Routes>
-      {routes.map((route) => (
-        <Route key={route.path} path={route.path} element={route.element} />
-      ))}
-    </Routes>
+    <Grid paddingX={4}>
+      <TopBar />
+      <Outlet />
+    </Grid>
   );
 }
+
+export const router = createBrowserRouter([
+  {
+    path: HOME,
+    element: <Container />,
+    children: [
+      {
+        path: HOME,
+        element: <Home />,
+      },
+      {
+        path: TODO,
+        element: <TodoScreen />,
+      },
+      {
+        path: TABLE_SAMPLE,
+        element: <TableSampleScreen />,
+      },
+    ],
+  },
+]);
