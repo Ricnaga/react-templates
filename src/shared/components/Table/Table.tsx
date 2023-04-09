@@ -57,16 +57,14 @@ export function Table<T extends Data, Extra extends string = ''>({
   return (
     <TableContainer>
       <ChakraTable variant="simple">
-        <TableCaption>Imperial to metric conversion factors</TableCaption>
         <Thead>
           <Tr>
             {header.map((value) => (
               <Th key={value.header.toString()} colSpan={value.colSpan ?? 1}>
                 {value.title}{' '}
                 <DirectionIconButton
-                  sortField={sortField}
-                  fieldName={value.header}
-                  order={order}
+                  isSelectedField={sortField !== value.header}
+                  isAscending={order === 'ASC'}
                   onChangeDirection={() => onOrderBy(value.header as keyof T)}
                 />
               </Th>
@@ -78,6 +76,7 @@ export function Table<T extends Data, Extra extends string = ''>({
             <Tr key={Math.random().toString()}>{children(value)}</Tr>
           ))}
         </Tbody>
+        <TableCaption>Exemplo de tabela ordenada</TableCaption>
       </ChakraTable>
     </TableContainer>
   );

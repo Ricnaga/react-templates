@@ -1,33 +1,28 @@
+import { useMemo } from 'react';
+
 import { TriangleDownIcon, TriangleUpIcon, UpDownIcon } from '@chakra-ui/icons';
 import { IconButton } from '@chakra-ui/react';
 
 interface DirectionIconButtonProps {
   onChangeDirection: () => void;
-  sortField: string | number | symbol | undefined;
-  fieldName: string | number | symbol;
-  order: 'ASC' | 'DESC';
+  isSelectedField: boolean;
+  isAscending: boolean;
 }
 
 export function DirectionIconButton({
   onChangeDirection,
-  fieldName,
-  sortField,
-  order,
+  isSelectedField,
+  isAscending,
 }: DirectionIconButtonProps) {
-  if (fieldName !== sortField)
-    return (
-      <IconButton
-        aria-label="Order Icon"
-        icon={<UpDownIcon />}
-        variant="link"
-        onClick={onChangeDirection}
-      />
-    );
+  const icon = useMemo(() => {
+    if (isSelectedField) return <UpDownIcon />;
+    return isAscending ? <TriangleUpIcon /> : <TriangleDownIcon />;
+  }, [isAscending, isSelectedField]);
 
   return (
     <IconButton
       aria-label="Order Icon"
-      icon={order === 'ASC' ? <TriangleUpIcon /> : <TriangleDownIcon />}
+      icon={icon}
       variant="link"
       onClick={onChangeDirection}
     />
