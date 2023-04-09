@@ -5,7 +5,6 @@ import {
   TableCaption,
   TableContainer,
   Tbody,
-  Tfoot,
   Th,
   Thead,
   Tr,
@@ -64,14 +63,12 @@ export function Table<T extends Data, Extra extends string = ''>({
             {header.map((value) => (
               <Th key={value.header.toString()} colSpan={value.colSpan ?? 1}>
                 {value.title}{' '}
-                {typeof value.header !== 'function' && (
-                  <DirectionIconButton
-                    sortField={sortField}
-                    fieldName={value.header}
-                    order={order}
-                    onChangeDirection={() => onOrderBy(value.header as keyof T)}
-                  />
-                )}
+                <DirectionIconButton
+                  sortField={sortField}
+                  fieldName={value.header}
+                  order={order}
+                  onChangeDirection={() => onOrderBy(value.header as keyof T)}
+                />
               </Th>
             ))}
           </Tr>
@@ -81,13 +78,6 @@ export function Table<T extends Data, Extra extends string = ''>({
             <Tr key={Math.random().toString()}>{children(value)}</Tr>
           ))}
         </Tbody>
-        <Tfoot>
-          <Tr>
-            <Th>To convert</Th>
-            <Th>into</Th>
-            <Th isNumeric>multiply by</Th>
-          </Tr>
-        </Tfoot>
       </ChakraTable>
     </TableContainer>
   );
