@@ -8,7 +8,7 @@ export const useSnackbar = () => {
     toast({
       status,
       get title() {
-        return this.status?.toUpperCase();
+        return status.toUpperCase();
       },
       description,
       isClosable: true,
