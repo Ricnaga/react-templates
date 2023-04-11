@@ -10,7 +10,7 @@ import {
   Tr,
 } from '@chakra-ui/react';
 
-import { DirectionIconButton } from './DirectionIconButton';
+import { TableSortButton } from '../TableSortButton/TableSortButton';
 
 type Data = Record<symbol, symbol>;
 
@@ -42,14 +42,17 @@ export function Table<T extends Data, Extra extends string = ''>({
   const onOrderBy = (fieldName: keyof T) => {
     const sortOrder =
       fieldName === sortField && order === 'ASC' ? OrderBy.DESC : OrderBy.ASC;
+
     setSortField(fieldName);
     setOrder(sortOrder);
 
     data.sort((a, b) => {
-      const compareFields = a[fieldName] > b[fieldName];
+      const nextGreatherThenPrevious = a[fieldName] > b[fieldName];
 
-      if (sortOrder === OrderBy.ASC) return compareFields ? 1 : -1;
-      if (sortOrder === OrderBy.DESC) return compareFields ? -1 : 1;
+      if (sortOrder === OrderBy.DESC && nextGreatherThenPrevious) return -1;
+      if (sortOrder === OrderBy.ASC && !nextGreatherThenPrevious) return -1;
+      if (sortOrder === OrderBy.ASC && nextGreatherThenPrevious) return 1;
+
       return 0;
     });
   };
@@ -60,13 +63,14 @@ export function Table<T extends Data, Extra extends string = ''>({
         <Thead>
           <Tr>
             {header.map((value) => (
-              <Th key={value.header.toString()} colSpan={value.colSpan ?? 1}>
-                {value.title}{' '}
-                <DirectionIconButton
+              <Th key={value.header.toString()} colSpan={value.colSpan}>
+                <TableSortButton
                   isSelectedField={sortField !== value.header}
                   isAscending={order === 'ASC'}
                   onChangeDirection={() => onOrderBy(value.header as keyof T)}
-                />
+                >
+                  {value.title}
+                </TableSortButton>
               </Th>
             ))}
           </Tr>

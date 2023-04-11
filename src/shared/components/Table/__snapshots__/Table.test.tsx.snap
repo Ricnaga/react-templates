@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: Table should render correctly 1`] = `
+<div>
+  <div
+    class="chakra-table__container css-zipzvv"
+  >
+    <table
+      class="chakra-table css-5605sr"
+    >
+      <thead
+        class="css-0"
+      >
+        <tr
+          class="css-0"
+        >
+          <th
+            class="css-1zts0j"
+          >
+            <button
+              aria-label="Order Icon"
+              class="chakra-button css-1j1nr9i"
+              type="button"
+            >
+              Mock id
+              <span
+                class="chakra-button__icon css-1hzyiq5"
+              >
+                <svg
+                  aria-hidden="true"
+                  class="chakra-icon css-onkibi"
+                  focusable="false"
+                  viewBox="-1 -1 9 11"
+                >
+                  <path
+                    d="M 3.5 0L 3.98809 -0.569442L 3.5 -0.987808L 3.01191 -0.569442L 3.5 0ZM 3.5 9L 3.01191 9.56944L 3.5 9.98781L 3.98809 9.56944L 3.5 9ZM 0.488094 3.56944L 3.98809 0.569442L 3.01191 -0.569442L -0.488094 2.43056L 0.488094 3.56944ZM 3.01191 0.569442L 6.51191 3.56944L 7.48809 2.43056L 3.98809 -0.569442L 3.01191 0.569442ZM -0.488094 6.56944L 3.01191 9.56944L 3.98809 8.43056L 0.488094 5.43056L -0.488094 6.56944ZM 3.98809 9.56944L 7.48809 6.56944L 6.51191 5.43056L 3.01191 8.43056L 3.98809 9.56944Z"
+                    fill="currentColor"
+                  />
+                </svg>
+              </span>
+            </button>
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        class="css-0"
+      >
+        <tr
+          class="css-0"
+        >
+          <td
+            class="css-xumdn4"
+          >
+            id1
+          </td>
+        </tr>
+        <tr
+          class="css-0"
+        >
+          <td
+            class="css-xumdn4"
+          >
+            id1
+          </td>
+        </tr>
+        <tr
+          class="css-0"
+        >
+          <td
+            class="css-xumdn4"
+          >
+            id2
+          </td>
+        </tr>
+      </tbody>
+      <caption
+        class="css-7478fk"
+      >
+        Exemplo de tabela ordenada
+      </caption>
+    </table>
+  </div>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</div>
+`;

@@ -1,0 +1,94 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: TableSortButton should render ascending button 1`] = `
+<div>
+  <button
+    aria-label="Order Icon"
+    class="chakra-button css-1j1nr9i"
+    type="button"
+  >
+    Mock children
+    <span
+      class="chakra-button__icon css-1hzyiq5"
+    >
+      <svg
+        aria-hidden="true"
+        class="chakra-icon css-onkibi"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M12.8,5.4c-0.377-0.504-1.223-0.504-1.6,0l-9,12c-0.228,0.303-0.264,0.708-0.095,1.047 C2.275,18.786,2.621,19,3,19h18c0.379,0,0.725-0.214,0.895-0.553c0.169-0.339,0.133-0.744-0.095-1.047L12.8,5.4z"
+          fill="currentColor"
+        />
+      </svg>
+    </span>
+  </button>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</div>
+`;
+
+exports[`Component: TableSortButton should render correctly 1`] = `
+<div>
+  <button
+    aria-label="Order Icon"
+    class="chakra-button css-1j1nr9i"
+    type="button"
+  >
+    Mock children
+    <span
+      class="chakra-button__icon css-1hzyiq5"
+    >
+      <svg
+        aria-hidden="true"
+        class="chakra-icon css-onkibi"
+        focusable="false"
+        viewBox="-1 -1 9 11"
+      >
+        <path
+          d="M 3.5 0L 3.98809 -0.569442L 3.5 -0.987808L 3.01191 -0.569442L 3.5 0ZM 3.5 9L 3.01191 9.56944L 3.5 9.98781L 3.98809 9.56944L 3.5 9ZM 0.488094 3.56944L 3.98809 0.569442L 3.01191 -0.569442L -0.488094 2.43056L 0.488094 3.56944ZM 3.01191 0.569442L 6.51191 3.56944L 7.48809 2.43056L 3.98809 -0.569442L 3.01191 0.569442ZM -0.488094 6.56944L 3.01191 9.56944L 3.98809 8.43056L 0.488094 5.43056L -0.488094 6.56944ZM 3.98809 9.56944L 7.48809 6.56944L 6.51191 5.43056L 3.01191 8.43056L 3.98809 9.56944Z"
+          fill="currentColor"
+        />
+      </svg>
+    </span>
+  </button>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</div>
+`;
+
+exports[`Component: TableSortButton should render descending button 1`] = `
+<div>
+  <button
+    aria-label="Order Icon"
+    class="chakra-button css-1j1nr9i"
+    type="button"
+  >
+    Mock children
+    <span
+      class="chakra-button__icon css-1hzyiq5"
+    >
+      <svg
+        aria-hidden="true"
+        class="chakra-icon css-onkibi"
+        focusable="false"
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M21,5H3C2.621,5,2.275,5.214,2.105,5.553C1.937,5.892,1.973,6.297,2.2,6.6l9,12 c0.188,0.252,0.485,0.4,0.8,0.4s0.611-0.148,0.8-0.4l9-12c0.228-0.303,0.264-0.708,0.095-1.047C21.725,5.214,21.379,5,21,5z"
+          fill="currentColor"
+        />
+      </svg>
+    </span>
+  </button>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</div>
+`;

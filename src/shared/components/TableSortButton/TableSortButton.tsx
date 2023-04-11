@@ -1,30 +1,35 @@
-import { useMemo } from 'react';
+import { ReactNode, useMemo } from 'react';
 
 import { TriangleDownIcon, TriangleUpIcon, UpDownIcon } from '@chakra-ui/icons';
-import { IconButton } from '@chakra-ui/react';
+import { Button } from '@chakra-ui/react';
 
-interface DirectionIconButtonProps {
+interface TableSortButtonProps {
   onChangeDirection: () => void;
   isSelectedField: boolean;
   isAscending: boolean;
+  children: ReactNode;
 }
 
-export function DirectionIconButton({
+export function TableSortButton({
   onChangeDirection,
   isSelectedField,
   isAscending,
-}: DirectionIconButtonProps) {
+  children,
+}: TableSortButtonProps) {
   const icon = useMemo(() => {
     if (isSelectedField) return <UpDownIcon />;
     return isAscending ? <TriangleUpIcon /> : <TriangleDownIcon />;
   }, [isAscending, isSelectedField]);
 
   return (
-    <IconButton
+    <Button
       aria-label="Order Icon"
-      icon={icon}
+      rightIcon={icon}
       variant="link"
+      size="sm"
       onClick={onChangeDirection}
-    />
+    >
+      {children}
+    </Button>
   );
 }
