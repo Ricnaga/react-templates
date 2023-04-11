@@ -38,6 +38,7 @@ export function TabList({ users, isLoading, onRefetchUsers }: TabListProps) {
     onOpen: removeUserAsOpen,
     onClose: removeUserAsClose,
   } = useDisclosure();
+
   const [value, setValue] = useState<string>('');
   const [user, setUser] = useState<User>({ id: '', name: '' });
   const [userId, setUserId] = useState<string>('');
@@ -50,6 +51,7 @@ export function TabList({ users, isLoading, onRefetchUsers }: TabListProps) {
     setUser(userToUpdate);
     updateUserAsOpen();
   };
+
   const onOpenRemove = (id: string) => {
     setUserId(id);
     removeUserAsOpen();
@@ -57,7 +59,7 @@ export function TabList({ users, isLoading, onRefetchUsers }: TabListProps) {
 
   return (
     <>
-      <Grid templateColumns="repeat(1,1fr)" gap={6}>
+      <Grid templateColumns="1fr" gap={6}>
         <GridItem>
           <FormControl>
             <Input

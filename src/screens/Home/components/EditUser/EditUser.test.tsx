@@ -5,9 +5,6 @@ import { EditUser } from './EditUser';
 
 let containerElement: HTMLElement;
 
-const mockedOnClose = jest.fn().mockReturnValue(true);
-const mockedOnRefetchUsers = jest.fn(() => Promise.reject());
-
 const callPATCH = jest.fn().mockImplementation(() =>
   Promise.resolve({
     data: [
@@ -28,13 +25,18 @@ jest.mock('@application/api/axios/useAxios', () => ({
   }),
 }));
 
+const onRefetchUsers = jest
+  .fn()
+  .mockImplementationOnce(() => Promise.resolve())
+  .mockImplementationOnce(() => Promise.reject());
+
 describe('Component: EditUser', () => {
   beforeEach(() => {
     const { container } = render(
-      <Modal isOpen onClose={mockedOnClose}>
+      <Modal isOpen onClose={jest.fn().mockReturnValue(true)}>
         <EditUser
           onClose={jest.fn}
-          onRefetchUsers={mockedOnRefetchUsers}
+          onRefetchUsers={onRefetchUsers}
           user={{ id: '1', name: 'mock name' }}
         />
         ,
@@ -55,13 +57,17 @@ describe('Component: EditUser', () => {
     );
 
     expect(callPATCH).toHaveBeenCalled();
+    expect(onRefetchUsers).toHaveBeenCalled();
   });
 
-  it('should get error toast when submited form', async () => {
+  it('should test error toast', async () => {
     await userEvent.click(
       screen.getByRole('button', {
         name: /atualizar/i,
       }),
     );
+
+    expect(callPATCH).toHaveBeenCalled();
+    expect(onRefetchUsers).toHaveBeenCalled();
   });
 });

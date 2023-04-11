@@ -35,6 +35,7 @@ describe('Page: Home', () => {
     containerElement = container;
     await waitForElementToBeRemoved(() => screen.getByText(/carregando/i));
   });
+
   it('render correctly', async () => {
     expect(containerElement).toMatchSnapshot();
   });
