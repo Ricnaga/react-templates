@@ -1,0 +1,5 @@
+{
+  "path": "cz-conventional-changelog",
+  "disableScopeLowerCase": true,
+  "disableSubjectLowerCase": true
+}
