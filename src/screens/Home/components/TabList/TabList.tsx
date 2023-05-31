@@ -13,21 +13,17 @@ import {
   useDisclosure,
 } from '@chakra-ui/react';
 
+import { User } from '@screens/Home/fetcher/useFetchHome';
 import { Modal } from '@shared/components/Modal/Modal';
 
-import { User } from '../../Home';
 import { EditUser } from '../EditUser/EditUser';
 import { RemoveUser } from '../RemoveUser/RemoveUser';
-import { TabListLoading } from '../TabListLoading';
 
 type TabListProps = {
   users: Array<User>;
-  isLoading: boolean;
   onRefetchUsers: () => Promise<void>;
 };
-export function TabList({ users, isLoading, onRefetchUsers }: TabListProps) {
-  if (isLoading) return <TabListLoading />;
-
+export function TabList({ users, onRefetchUsers }: TabListProps) {
   const {
     isOpen: updateUserIsOpen,
     onOpen: updateUserAsOpen,
@@ -43,7 +39,7 @@ export function TabList({ users, isLoading, onRefetchUsers }: TabListProps) {
   const [user, setUser] = useState<User>({ id: '', name: '' });
   const [userId, setUserId] = useState<string>('');
 
-  const filteredUsers = users.filter((user) =>
+  const filteredUsers = users?.filter((user) =>
     user.name.toLowerCase().includes(value.toLowerCase()),
   );
 

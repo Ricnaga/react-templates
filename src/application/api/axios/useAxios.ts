@@ -1,4 +1,6 @@
-import { AxiosRequestConfig } from 'axios';
+import { useState } from 'react';
+
+import { AxiosError, AxiosRequestConfig } from 'axios';
 
 import { api } from '.';
 
@@ -58,5 +60,39 @@ export const useAxios = () => {
       callPUT,
       callPATCH,
     },
+  };
+};
+
+export enum RequestStatus {
+  IDLE = 'IDLE',
+  PENDING = 'PENDING',
+  FAIL = 'FAIL',
+  DONE = 'DONE',
+}
+
+export const useAxiosGet = <T>({
+  url,
+  config,
+}: Omit<AxiosParams, 'bodyData'>) => {
+  const [status, setStatus] = useState<keyof typeof RequestStatus>('IDLE');
+  const [data, setData] = useState<T | undefined>();
+
+  const callAxiosGet = async () => {
+    setStatus('PENDING');
+
+    try {
+      const response = await api.get<T>(url, config);
+      setStatus('DONE');
+      setData(response.data);
+    } catch (error) {
+      setStatus('FAIL');
+      throw Error('Erro, não foi possível receber dados do backend');
+    }
+  };
+
+  return {
+    callAxiosGet,
+    status,
+    data,
   };
 };

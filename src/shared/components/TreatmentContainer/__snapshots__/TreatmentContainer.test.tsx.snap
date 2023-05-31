@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component: TreatmentContainer should render correctly 1`] = `
+<div>
+  <div
+    class="css-lgj0h8"
+  >
+    <div
+      class="css-lgj0h8"
+    >
+      mock
+    </div>
+  </div>
+  <span
+    hidden=""
+    id="__chakra_env"
+  />
+</div>
+`;

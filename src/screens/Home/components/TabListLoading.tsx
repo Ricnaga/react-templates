@@ -11,9 +11,6 @@ export function TabListLoading() {
   return (
     <Grid templateColumns="repeat(1,1fr)" gap={6}>
       <GridItem>
-        <Text textAlign="center" fontSize="6xl">
-          Carregando
-        </Text>
         <Skeleton h="40px" />
       </GridItem>
       <Grid templateColumns="repeat(3, 1fr)" gap={4}>

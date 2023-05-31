@@ -8,9 +8,8 @@ import {
 import { useFormik } from 'formik';
 
 import { useAxios } from '@application/api/axios/useAxios';
+import { User } from '@screens/Home/fetcher/useFetchHome';
 import { useSnackbar } from '@shared/components/Snackbar/useSnackbar';
-
-import { User } from '../../Home';
 
 type EditUserProps = {
   onClose: () => void;
